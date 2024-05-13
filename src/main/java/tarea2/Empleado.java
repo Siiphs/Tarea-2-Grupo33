@@ -1,6 +1,6 @@
 package tarea2;
 
-public class Empleado {
+public class Empleado implements Invitable{
     private int id;
     private String nombre;
     private String apellido;
@@ -48,5 +48,10 @@ public class Empleado {
 
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    @Override
+    public void invitar(Reunion r){
+        r.listaInvitados.add(id);
     }
 }
