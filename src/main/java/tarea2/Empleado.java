@@ -1,18 +1,13 @@
-package tarea2;;
+package tarea2;
 
 public class Empleado {
     private int id;
     private String nombre;
     private String apellido;
     private String correo;
-    private Departamento departamento;
+    private String departamento;
 
-    public Empleado(int id, String nombre, String apellido, String correo, Departamento departamento) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.departamento = departamento;
+    public Empleado() {
     }
 
     public int getId() {
@@ -47,18 +42,11 @@ public class Empleado {
         this.correo = correo;
     }
 
-    public Departamento getDepartamento() {
+    public String getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(Departamento departamento) {
+    public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
-
-    @Override
-    public void invitar {
-
-    }
 }
-
-
