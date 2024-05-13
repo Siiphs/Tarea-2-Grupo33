@@ -1,7 +1,5 @@
 package tarea2;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.util.*;
 import java.time.*;
 
@@ -13,7 +11,7 @@ public class ReunionPresencial extends Reunion{
         super(fecha,horaPrevista,duracionPrevista,tipoReunion,esPresencial);
     }
 
-    public String getSala(){
+    public String getLugar(){
         return sala;
     }
     public void setSala(String sala){
