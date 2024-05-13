@@ -6,7 +6,8 @@ public class Invitacion {
     
     private Instant hora;
     
-    public Invitacion(){
-
+    public Invitacion(Reunion r){
+        r.horaInicio =
     }
+
 }
