@@ -31,6 +31,10 @@ public class Departamento implements Invitable {
         return lista.size();
     }
 
+    public ArrayList<Empleado> getLista() {
+        return lista;
+    }
+
     @Override
     public void invitar(Reunion r) {
         for (int i = 0; i < lista.size(); i++) {

@@ -9,6 +9,7 @@ abstract class Reunion {
     private Duration duracionPrevista, duracionReal;
     private Instant horaInicio, horaFin = null;
     private Asistencia asistencia;
+    private ArrayList<Nota> listaNotas;
 
     public ArrayList<Integer> listaInvitados, listaAusencias;
 
@@ -55,8 +56,17 @@ abstract class Reunion {
         }
     }
 
-    public ArrayList obtenerAsistencias() {
+    public ArrayList<Integer> obtenerAsistencias() {
         return asistencia.listaAsistencia;
+    }
+
+    public void agregarNota(String contenido) {
+        Nota nota = new Nota(contenido);
+        listaNotas.add(nota);
+    }
+
+    public ArrayList<Nota> obtenerNotas() {
+        return listaNotas;
     }
 
     // public void crearListaAusencias(){
@@ -77,11 +87,11 @@ abstract class Reunion {
     // }
     // }
 
-    public ArrayList obtenerAusencias() {
+    public ArrayList<Integer> obtenerAusencias() {
         return listaAusencias;
     }
 
-    public ArrayList obtenerRetrasos() {
+    public ArrayList<Integer> obtenerRetrasos() {
         return asistencia.listaAtrasos;
     }
 
@@ -99,7 +109,6 @@ abstract class Reunion {
 
     public void iniciar() {
         this.horaInicio = Instant.now();
-        finalizar();
     }
 
     public void finalizar() {
