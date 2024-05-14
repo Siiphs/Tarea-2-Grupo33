@@ -6,9 +6,11 @@ import java.time.*;
 public class ReunionPresencial extends Reunion{
     private String sala;
 
-    public ReunionPresencial(Date fecha, Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
+    public ReunionPresencial(Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
+        super(horaPrevista,duracionPrevista,tipoReunion,esPresencial);
         
-        super(fecha,horaPrevista,duracionPrevista,tipoReunion,esPresencial);
+        this.sala = "Sala " + indice;
+        indice++;
     }
 
     public String getLugar(){

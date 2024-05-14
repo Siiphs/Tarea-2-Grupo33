@@ -21,7 +21,7 @@ public class Departamento implements Invitable{
             e.setDepartamento(this.nombre);
 
             lista.add(e);
-            indice += 1;
+            indice ++;
             listaGeneral.add(e);
         }
     }
@@ -34,6 +34,7 @@ public class Departamento implements Invitable{
     public void invitar(Reunion r){
         for(int i = 0; i < lista.size(); i++){
             r.listaInvitados.add(lista.get(i).getId());
+            Invitacion invitacion = new Invitacion(r);
         }
     }
 }

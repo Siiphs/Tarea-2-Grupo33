@@ -6,6 +6,7 @@ public class Empleado implements Invitable{
     private String apellido;
     private String correo;
     private String departamento;
+    private Invitacion invitacion;
 
     public Empleado() {
     }
@@ -53,5 +54,10 @@ public class Empleado implements Invitable{
     @Override
     public void invitar(Reunion r){
         r.listaInvitados.add(id);
+        this.invitacion = new Invitacion(r);
+    }
+
+    public Invitacion getInvitacion() {
+        return invitacion;
     }
 }

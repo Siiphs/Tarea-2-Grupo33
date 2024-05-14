@@ -6,9 +6,9 @@ import java.time.*;
 public class ReunionVirtual extends Reunion{
     private String enlace;
 
-    public ReunionVirtual(Date fecha, Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
-        
-        super(fecha,horaPrevista,duracionPrevista,tipoReunion,esPresencial);
+    public ReunionVirtual(Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
+        super(horaPrevista,duracionPrevista,tipoReunion,esPresencial);
+        this.enlace = "https://meet.google.com/" + new Random().nextInt(1000000)+ 100000;
     }
 
     public String getLugar(){

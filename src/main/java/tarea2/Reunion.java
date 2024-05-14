@@ -8,7 +8,7 @@ abstract class Reunion {
     private Instant horaPrevista;
     private Duration duracionPrevista;
     private Instant horaInicio, horaFin = null;
-    static int indice = 1;
+    static long indice = 1;
 
 
 
@@ -27,20 +27,14 @@ abstract class Reunion {
     public ArrayList<Integer> listaAusencias = new ArrayList<Integer>();
     
 
-    public Reunion(Date fecha, Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
+    public Reunion(Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial){
         
-        if(esPresencial){
-            ReunionPresencial rp = new ReunionPresencial(fecha,horaPrevista,duracionPrevista, tipoReunion, esPresencial);
-            rp.setSala("Reunion " + indice);
-            indice++;
-            Invitacion invitacion = new Invitacion(rp);
+        this.horaPrevista = horaPrevista;
+        this.duracionPrevista = duracionPrevista;
+        this.fecha = Date.from(horaPrevista);
+
         }
-        else{
-            ReunionVirtual rv = new ReunionVirtual(fecha, horaPrevista,duracionPrevista, tipoReunion, esPresencial);
-            rv.setEnlace("https://meet.google.com/" + new Random().nextInt(1000000)+ 100000);
-            Invitacion invitacion = new Invitacion(rv);
-        }
-    }
+    
     
     public void entraEmpleado(Empleado e){
         if(horaFin==null){

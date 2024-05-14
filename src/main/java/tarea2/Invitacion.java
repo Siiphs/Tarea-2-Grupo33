@@ -19,4 +19,13 @@ public class Invitacion {
         
     }
 
+    public Instant getHora(){
+        return hora;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    public String getLugar(){
+        return lugar;
+    }
 }
