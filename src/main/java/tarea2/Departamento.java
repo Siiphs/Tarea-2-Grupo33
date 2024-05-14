@@ -1,7 +1,8 @@
 package tarea2;
 
 import java.util.*;
-public class Departamento implements Invitable{
+
+public class Departamento implements Invitable {
     private String nombre;
     private ArrayList<Empleado> lista;
     static ArrayList<Empleado> listaGeneral = new ArrayList<Empleado>();
@@ -21,7 +22,7 @@ public class Departamento implements Invitable{
             e.setDepartamento(this.nombre);
 
             lista.add(e);
-            indice ++;
+            indice++;
             listaGeneral.add(e);
         }
     }
@@ -31,10 +32,10 @@ public class Departamento implements Invitable{
     }
 
     @Override
-    public void invitar(Reunion r){
-        for(int i = 0; i < lista.size(); i++){
+    public void invitar(Reunion r) {
+        for (int i = 0; i < lista.size(); i++) {
             r.listaInvitados.add(lista.get(i).getId());
-            Invitacion invitacion = new Invitacion(r);
+            lista.get(i).invitar(r);
         }
     }
 }

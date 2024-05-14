@@ -11,7 +11,7 @@ public enum tipoReunion {
         this.cualReunion = cualReunion;
     }
 
-    public int getCualReuniion(){
+    public int getCualReuniion() {
         return cualReunion;
     }
 }

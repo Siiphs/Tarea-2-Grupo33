@@ -2,15 +2,14 @@ package tarea2;
 
 import java.time.*;
 
-public class Retraso extends Asistencia{
-    private Instant hora;
+public class Retraso extends Asistencia {
+    private Long hora;
 
-    public Retraso(Instant hora){
+    public Retraso(Long hora) {
         super(hora);
     }
 
-    Instant getHora(){
-        return hora;
+    Long getMinutos() {
+        return hora / 1000 / 60;
     }
-
 }

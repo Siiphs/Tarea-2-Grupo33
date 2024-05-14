@@ -1,6 +1,6 @@
 package tarea2;
 
-public class Empleado implements Invitable{
+public class Empleado implements Invitable {
     private int id;
     private String nombre;
     private String apellido;
@@ -52,7 +52,7 @@ public class Empleado implements Invitable{
     }
 
     @Override
-    public void invitar(Reunion r){
+    public void invitar(Reunion r) {
         r.listaInvitados.add(id);
         this.invitacion = new Invitacion(r);
     }

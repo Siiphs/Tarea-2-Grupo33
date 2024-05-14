@@ -4,28 +4,26 @@ import java.util.*;
 import java.time.*;
 
 public class Invitacion {
-    
+
     private Instant hora;
     private Date fecha;
     private String lugar;
 
-    public Invitacion(Reunion r){
+    public Invitacion(Reunion r) {
         this.hora = r.getHoraPrevista();
         this.fecha = r.getFecha();
         this.lugar = r.getLugar();
-        /*if(r.getClass()==ReunionPresencial.class){
-            this.lugar = r.getSala();
-        }*/
-        
     }
 
-    public Instant getHora(){
+    public Instant getHora() {
         return hora;
     }
-    public Date getFecha(){
+
+    public Date getFecha() {
         return fecha;
     }
-    public String getLugar(){
+
+    public String getLugar() {
         return lugar;
     }
 }
