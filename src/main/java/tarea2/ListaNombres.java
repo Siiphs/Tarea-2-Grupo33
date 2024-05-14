@@ -1,8 +1,23 @@
 package tarea2;
 
+/**
+ * Una lista con nombres y apellidos comunes que pueden tener los empleados.
+ * 
+ * @author Felipe Tilleria
+ * @since 12 de mayo de 2024
+ * 
+ */
 import java.util.*;
 
 public class ListaNombres {
+/**
+ * @param nombres es una lista estatica con nombres comunes que luego se asignaran de forma aleatoria a cada empleado
+ * de un Departamento.
+ * 
+ * @param apellidos igual que nombres.
+ * 
+ * @see Departamento
+ */
     static ArrayList<String> nombres = new ArrayList<>(Arrays.asList(
     "Lucía", "Mateo", "Valentina", "Santiago", "Isabella", "Benjamín", "Camila", "Matías", "Sofía", "Sebastián",
     "Valeria", "Nicolás", "Martina", "Diego", "Florencia", "Daniel", "Antonia", "Joaquín", "Emma", "Felipe",
@@ -25,13 +40,26 @@ public class ListaNombres {
     "Cervantes", "Villanueva", "Cordero", "Barrera", "Salazar", "Cárdenas", "Cáceres", "Cano", "Cuevas", "Cisneros",
     "Villalobos", "Lara", "Castaño", "Córdova", "Carranza", "Cádiz", "Cabello", "Cepeda", "Castañón", "Carrasco",
     "Cavazos", "Cedillo", "Cervantes", "Villanueva", "Cordero", "Barrera", "Salazar", "Cárdenas", "Cáceres", "Cano"));
-
+/**
+ * El constructor de la clase no necesita argumentos ya que esta lista se mantiene constante
+ * en el funcionamiento del programa.
+ */
     public ListaNombres() { }
 
+/**
+ * Obtiene un nombre aleatorio haciendo uso de la biblioteca de java Math.
+ *
+ * @return un nombre aleatorio.
+ */
     public static String getNombre() {
         return nombres.get((int) (Math.random() * nombres.size()));
     }
 
+/**
+ * Obtiene un apellido aleatorio haciendo uso de la biblioteca de java Math.
+ *
+ * @return un apellido aleatorio.
+ */
     public static String getApellido() {
         return apellidos.get((int) (Math.random() * apellidos.size()));
     }
