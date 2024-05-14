@@ -6,14 +6,19 @@ import java.time.*;
 public class Main {
     public static void main(String[] args) {
 
+        //para colores de titulos
+        final String ANSI_ORANGE = "\u001B[38;2;255;165;0m";
+        final String ANSI_RESET = "\u001B[0m";
+
         Departamento Qa = new Departamento(3);
         Departamento Dev = new Departamento(8);
         Departamento Marketing = new Departamento(5);
 
         // Instant hola = Instant.parse("2024-05-13T23:05:55.088Z");
 
-        // int size = Departamento.listaGeneral.size();
-        System.out.println("Nombre: " + Departamento.listaGeneral.get(0).getNombre() + " "
+
+        System.out.println(ANSI_ORANGE + "\u001B[3m" + "Todos los invitados" + ANSI_RESET);
+        System.out.println("\n      Nombre: " + Departamento.listaGeneral.get(0).getNombre() + " "
                 + Departamento.listaGeneral.get(0).getApellido() + ", correo: "
                 + Departamento.listaGeneral.get(0).getCorreo() + ", id: " + Departamento.listaGeneral.get(0).getId() + "\n");
 
@@ -34,7 +39,7 @@ public class Main {
 
         rv.iniciar();
 
-        System.out.println("lista de invitados: " + rv.listaInvitados.size()+ "\n");
+        System.out.println("lista de invitados a la reunion virtual: " + rv.listaInvitados.size()+ "\n");
 
         rv.finalizar();
         
