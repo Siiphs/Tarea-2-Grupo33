@@ -5,14 +5,11 @@ import java.time.*;
 
 abstract class Reunion {
     private Date fecha;
-    private Instant horaPrevista;
-    private Duration duracionPrevista;
-    private Instant horaInicio, horaFin = null;
+    private Instant horaPrevista,horaInicio, horaFin = null;;
+    private Duration duracionPrevista, duracionReal;
     static long indice = 1;
 
 
-
-    public Duration duracionReal;
     Asistencia asistencia = new Asistencia(horaPrevista);
 
 
@@ -96,6 +93,19 @@ abstract class Reunion {
 
     }
 
+    public Duration getDuracionReal(){
+        return duracionReal;
+    }
+
+    public Instant getHoraInicio(){
+        return horaInicio;
+    }
+
+    public Instant getHoraFin(){
+        return horaFin;
+    }  
+
     abstract String getLugar();
+
 
 }
