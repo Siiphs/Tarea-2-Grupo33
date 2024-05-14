@@ -5,7 +5,7 @@ import java.time.*;
 
 abstract class Reunion {
     private Date fecha;
-    private Instant horaPrevista,horaInicio, horaFin = null;;
+    private Instant horaPrevista,horaInicio, horaFin = null;
     private Duration duracionPrevista, duracionReal;
     static long indice = 1;
 
@@ -90,7 +90,7 @@ abstract class Reunion {
     public void finalizar(){
         horaFin = Instant.now();
         duracionReal = Duration.between(horaInicio,horaFin);
-
+        this.crearListaAusencias();
     }
 
     public Duration getDuracionReal(){

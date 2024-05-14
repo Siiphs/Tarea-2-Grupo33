@@ -1,6 +1,7 @@
 import tarea2.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.time.*;
 import org.junit.jupiter.api.*;
 
 public class NotaTest {

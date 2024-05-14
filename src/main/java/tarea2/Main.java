@@ -10,13 +10,12 @@ public class Main {
         Departamento Dev = new Departamento(8);
         Departamento Marketing = new Departamento(5);
 
-        Instant hola = Instant.parse("2024-05-13T23:05:55.088Z");
 
         // empleado print ejemplo
         System.out.println("\nNombre: " + Departamento.listaGeneral.get(0).getNombre() + " " + Departamento.listaGeneral.get(0).getApellido() + ", correo: " + Departamento.listaGeneral.get(0).getCorreo() + ", id: " + Departamento.listaGeneral.get(0).getId());
         
-        // reunion presebncial
-        Reunion rp = new ReunionPresencial(hola, Duration.ofHours(1), 3, true);
+        // reunion presencial
+        ReunionPresencial rp = new ReunionPresencial(Instant.parse("2024-05-13T23:05:55.088Z"), Duration.ofHours(1), 3, true);
 
         // invitar a un empleado
         Departamento.listaGeneral.get(0).invitar(rp);
