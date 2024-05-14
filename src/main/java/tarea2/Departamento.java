@@ -34,7 +34,6 @@ public class Departamento implements Invitable {
     @Override
     public void invitar(Reunion r) {
         for (int i = 0; i < lista.size(); i++) {
-            r.listaInvitados.add(lista.get(i).getId());
             lista.get(i).invitar(r);
         }
     }
