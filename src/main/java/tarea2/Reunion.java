@@ -11,7 +11,10 @@ abstract class Reunion {
     private Asistencia asistencia;
     private ArrayList<Nota> listaNotas;
 
+    
+    
     public ArrayList<Integer> listaInvitados, listaAusencias;
+    // public Object listaAsistencia;
 
     static long indice = 1;
 
@@ -28,30 +31,38 @@ abstract class Reunion {
         this.duracionPrevista = duracionPrevista;
         this.fecha = Date.from(horaPrevista);
 
-        listaAusencias = new ArrayList<Integer>();
         listaInvitados = new ArrayList<Integer>();
         asistencia = new Asistencia(horaPrevista.toEpochMilli());
     }
 
     public void simularLlegada(ArrayList<Integer> listaInvitados) {
-        listaAusencias = listaInvitados;
-        long horaLlegada = InstanteAleatorio.getRandInstant(horaInicio, duracionReal);
+        listaAusencias = new ArrayList<Integer>(listaInvitados);
+        Instant horaFin = horaInicio.plus(duracionPrevista);
 
+        //prints 
+        System.out.println("Hora de inicio: " + horaInicio);
+        System.out.println("Hora de fin: " + horaFin + "\n");
+
+
+
+        InstanteAleatorio instanteAleatorio = new InstanteAleatorio();
+        Instant RandInstant = instanteAleatorio.getRandInstant(horaInicio, duracionPrevista);
+        
         for (int i = 0; i < listaInvitados.size(); i++) {
-            if (horaLlegada < horaInicio.toEpochMilli()) {
-                asistencia.listaAsistencia.add(listaAusencias.get(i));
-                listaAusencias.remove(i);
+            RandInstant = instanteAleatorio.getRandInstant(horaInicio, duracionPrevista);
+            System.out.println(RandInstant);
+            if (RandInstant.isBefore(horaInicio)) {
+                asistencia.listaAsistencia.add(listaAusencias.remove(0));
             }
 
-            else if (horaLlegada < (duracionReal.toMillis() + horaInicio.toEpochMilli())) {
-                asistencia.listaAtrasos.add(listaAusencias.get(i));
-                asistencia.listaAsistencia.add(listaAusencias.get(i));
+            else if (RandInstant.isBefore(horaFin)) {
+                asistencia.listaAtrasos.add(listaAusencias.get(0));
+                asistencia.listaAsistencia.add(listaAusencias.remove(0));
 
-                Long retraso = horaLlegada - horaInicio.toEpochMilli();
+                Long retraso = RandInstant.toEpochMilli() - horaInicio.toEpochMilli();
                 if (retraso > 0) {
                     Retraso r = new Retraso(retraso);
                 }
-                listaAusencias.remove(i);
             }
         }
     }
