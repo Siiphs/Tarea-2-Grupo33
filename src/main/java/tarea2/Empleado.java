@@ -58,7 +58,7 @@ public class Empleado implements Invitable {
     public String getNombre() {
         return nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -88,7 +88,8 @@ public class Empleado implements Invitable {
     }
 
     /*
-     * El metodo invitar añade al empleado a la lista de invitados de la reunion y le entrega una referencia de la reunion al empleado dentro de su invitacion.
+     * El metodo invitar añade al empleado a la lista de invitados de la reunion y
+     * le entrega una referencia de la reunion al empleado dentro de su invitacion.
      */
     @Override
     public void invitar(Reunion r) {

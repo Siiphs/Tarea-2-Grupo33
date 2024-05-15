@@ -1,12 +1,13 @@
 package tarea2;
 
 /**
- * El enum tipoReunion representa las distintas tematicas que puede tener una reunion.
+ * El enum tipoReunion representa las distintas tematicas que puede tener una
+ * reunion.
  * 
  * @author Dario Sepulveda
  * @since 11 de mayo de 2024
  * 
- *        
+ * 
  */
 
 public enum tipoReunion {
@@ -15,6 +16,7 @@ public enum tipoReunion {
     OTRO(3);
 
     private int cualReunion;
+
     /**
      * Constructor privado para inicializar el tipo de reunion.
      *
@@ -29,7 +31,7 @@ public enum tipoReunion {
      *
      * @return El tipo de reunion.
      */
-    public int getCualReunion(){
+    public int getCualReunion() {
         return cualReunion;
     }
 }
