@@ -36,7 +36,7 @@ abstract class Reunion {
 
     public void simularLlegada(ArrayList<Integer> listaInvitados) {
         listaAusencias = new ArrayList<Integer>(listaInvitados);
-        Instant horaFin = horaInicio.plus(duracionReal);
+        Instant horaFin = horaInicio.plus(duracionPrevista);
 
         //prints 
         System.out.println("Hora de inicio: " + horaInicio);
@@ -55,7 +55,7 @@ abstract class Reunion {
             }
 
             else if (RandInstant.isBefore(horaFin)) {
-                asistencia.listaAtrasos.add(listaAusencias.get(i));
+                asistencia.listaAtrasos.add(listaAusencias.get(0));
                 asistencia.listaAsistencia.add(listaAusencias.remove(0));
 
                 Long retraso = RandInstant.toEpochMilli() - horaInicio.toEpochMilli();
@@ -66,7 +66,7 @@ abstract class Reunion {
         }
     }
 
-    public ArrayList obtenerAsistencias() {
+    public ArrayList<Integer> obtenerAsistencias() {
         return asistencia.listaAsistencia;
     }
 
@@ -88,11 +88,11 @@ abstract class Reunion {
     // }
     // }
 
-    public ArrayList obtenerAusencias() {
+    public ArrayList<Integer> obtenerAusencias() {
         return listaAusencias;
     }
 
-    public ArrayList obtenerRetrasos() {
+    public ArrayList<Integer> obtenerRetrasos() {
         return asistencia.listaAtrasos;
     }
 
@@ -118,19 +118,5 @@ abstract class Reunion {
         simularLlegada(listaInvitados);
     }
 
-    public Duration getDuracionReal(){
-        return duracionReal;
-    }
-
-    public Instant getHoraInicio(){
-        return horaInicio;
-    }
-
-    public Instant getHoraFin(){
-        return horaFin;
-    }  
-
     abstract String getLugar();
 }
-
-    

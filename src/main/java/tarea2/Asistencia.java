@@ -13,14 +13,14 @@ import java.util.ArrayList;
  * @param listaAtrasos en un ArrayList de cada empleado que si llego tarde a la reunion.
  */
 class Asistencia{
-    public ArrayList<Empleado> listaAsistencia = new ArrayList<Empleado>();
-    public ArrayList<Empleado> listaAtrasos = new ArrayList<Empleado>();
+    public ArrayList<Integer> listaAsistencia = new ArrayList<Integer>();
+    public ArrayList<Integer> listaAtrasos = new ArrayList<Integer>();
 
     /**
      * @param hora es correspondiente a la hora en la que la reunion verdaderamente inicia, para poder revisar si el empleado realmente llego tarde o no.
      */
-    private Instant hora;
-    public Asistencia(Instant hora){
+    private long hora;
+    public Asistencia(long hora){
         this.hora = hora;
     }
 }
