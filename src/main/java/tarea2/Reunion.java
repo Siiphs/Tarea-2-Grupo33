@@ -50,7 +50,6 @@ abstract class Reunion {
         
         for (int i = 0; i < listaInvitados.size(); i++) {
             RandInstant = instanteAleatorio.getRandInstant(horaInicio, duracionPrevista);
-            System.out.println(RandInstant);
             if (RandInstant.isBefore(horaInicio)) {
                 asistencia.listaAsistencia.add(listaAusencias.remove(0));
             }

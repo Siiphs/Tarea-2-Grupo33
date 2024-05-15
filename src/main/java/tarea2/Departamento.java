@@ -67,10 +67,6 @@ public class Departamento implements Invitable{
         return lista;
     }
 
-    public ArrayList<Empleado> getLista() {
-        return lista;
-    }
-
     /**
      * El metodo invitar añade a cada empleado de la lista de empleados del departamento a la lista de invitados de la reunion, y a este le entrega una invitacion con referencia a la reunion dicha.
      */
