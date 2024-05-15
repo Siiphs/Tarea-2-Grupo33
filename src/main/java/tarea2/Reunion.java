@@ -118,6 +118,18 @@ abstract class Reunion {
         simularLlegada(listaInvitados);
     }
 
+    public Duration getDuracionReal(){
+        return duracionReal;
+    }
+
+    public Instant getHoraInicio(){
+        return horaInicio;
+    }
+
+    public Instant getHoraFin(){
+        return horaFin;
+    }  
+
     abstract String getLugar();
 }
 

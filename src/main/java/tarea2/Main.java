@@ -4,7 +4,7 @@ import java.util.*;
 import java.time.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //para colores de titulos
         final String ANSI_ORANGE = "\u001B[38;2;255;165;0m";
@@ -24,9 +24,43 @@ public class Main {
 
         Reunion rp = new ReunionPresencial(Instant.now(), Duration.ofHours(1), 3, true);
 
+        // invitar a un empleado
         Departamento.listaGeneral.get(0).invitar(rp);
 
+        // obtener invitacion
+        System.out.println( "\n \033[38;5;208mInvitación a la Reunión Presencial\033[0m \n");
         Invitacion invitacion = Departamento.listaGeneral.get(0).getInvitacion();
+        System.err.println("    Hora:   " + invitacion.getHora());
+        System.err.println("    Fecha:  " + invitacion.getFecha());
+        System.err.println("    Lugar:  " + invitacion.getLugar());
+
+
+        //Empleados que llegaron antes de la reunion    
+
+        //inciar reunion
+        rp.iniciar();
+
+        Thread.sleep(10000 * 3);
+        
+        //finalizar reunion
+        rp.finalizar();
+
+        //duración de la reunion
+        System.out.println("\n \033[38;5;208mHoraciones de la Reunión Presencial\033[0m \n");
+        System.out.println("    Hora inicio de la reunion:  " + rp.getHoraInicio());
+        System.out.println("    Hora fin de la reunion:     " + rp.getHoraFin());
+        System.out.println("    Duración de la reunión:     " + rp.getDuracionReal());
+
+
+
+
+
+
+
+
+
+
+
 
         // System.err.println(invitacion.getHora());
         System.err.println("Hora: " + invitacion.getFecha());
