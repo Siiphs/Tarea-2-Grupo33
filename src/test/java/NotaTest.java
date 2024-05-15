@@ -23,8 +23,8 @@ public class NotaTest {
         rp.agregarNota("Nota escrita en la reunión");
         rp.agregarNota("otra nota");
 
-        assertNotNull(rp.obtenerNotas());
-        assertEquals("Nota escrita en la reunión", rp.obtenerNotas().get(0).getContenido());
-        assertEquals("otra nota", rp.obtenerNotas().get(1).getContenido());
+        assertNotNull(rp.getNotas());
+        assertEquals("Nota escrita en la reunión", rp.getNotas().get(0).getContenido());
+        assertEquals("otra nota", rp.getNotas().get(1).getContenido());
     }
 }

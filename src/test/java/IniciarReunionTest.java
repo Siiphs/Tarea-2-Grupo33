@@ -19,6 +19,6 @@ public class IniciarReunionTest {
         rp.iniciar();
 
         assertNotNull(rp.getHoraInicio());
-        assertNotNull(rp.obtenerRetrasos());
+        assertNotNull(rp.getRetrasos());
     }
 }

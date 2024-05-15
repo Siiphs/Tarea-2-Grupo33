@@ -61,25 +61,25 @@ public class Main {
                     + Departamento.listaGeneral.get(rv.listaAusencias.get(i)).getApellido());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de asistencias: " + rv.obtenerAsistencias().size()
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de asistencias: " + rv.getAsistencias().size()
                 + ANSI_RESET + "\n");
 
-        for (int i = 0; i < rv.obtenerAsistencias().size(); i++) {
-            System.out.println((i + 1) + ".  id: " + rv.obtenerAsistencias().get(i) + ", Asistente: "
-                    + Departamento.listaGeneral.get(rv.obtenerAsistencias().get(i)).getNombre() + " "
-                    + Departamento.listaGeneral.get(rv.obtenerAsistencias().get(i)).getApellido());
+        for (int i = 0; i < rv.getAsistencias().size(); i++) {
+            System.out.println((i + 1) + ".  id: " + rv.getAsistencias().get(i) + ", Asistente: "
+                    + Departamento.listaGeneral.get(rv.getAsistencias().get(i)).getNombre() + " "
+                    + Departamento.listaGeneral.get(rv.getAsistencias().get(i)).getApellido());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de retrasos: " + rv.obtenerRetrasos().size()
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de retrasos: " + rv.getRetrasos().size()
                 + ANSI_RESET + "\n");
 
-        for (int i = 0; i < rv.obtenerRetrasos().size(); i++) {
-            System.out.println((i + 1) + ".  id: " + rv.obtenerRetrasos().get(i) + ", Restrasado: "
-                    + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getNombre() + " "
-                    + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getApellido());
+        for (int i = 0; i < rv.getRetrasos().size(); i++) {
+            System.out.println((i + 1) + ".  id: " + rv.getRetrasos().get(i) + ", Restrasado: "
+                    + Departamento.listaGeneral.get(rv.getRetrasos().get(i)).getNombre() + " "
+                    + Departamento.listaGeneral.get(rv.getRetrasos().get(i)).getApellido());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Porcentaje de asistencia: " + rv.obtenerPorcentajeAsistencia() * 100 + "%" + ANSI_RESET + "\n");
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Porcentaje de asistencia: " + rv.getPorcentajeAsistencia() * 100 + "%" + ANSI_RESET + "\n");
         
     }
 }

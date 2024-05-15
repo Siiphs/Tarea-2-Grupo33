@@ -62,24 +62,6 @@ abstract class Reunion {
     static long indice = 1;
 
     /**
-     * Obtiene la fecha en que se realiza la reunion.
-     *
-     * @return el dia en que se realiza.
-     */
-    public Date getFecha() {
-        return fecha;
-    }
-
-    /**
-     * Obtiene la hora en la que la reunion deberia comenzar.
-     *
-     * @return la hora prevista.
-     */
-    public Instant getHoraPrevista() {
-        return horaPrevista;
-    }
-
-    /**
      * Metodo constructor de la reunion. En este se declara la hora en la que
      * deberia comenzar, el tiempo estimado que va a durar, la tematica de la
      * reunion y la modalidad (presencial o virtual).
@@ -164,28 +146,26 @@ abstract class Reunion {
      * 
      * @return la lista de empleados que asistieron, segun su identificacion.
      */
-    public ArrayList<Integer> obtenerAsistencias() {
+    public ArrayList<Integer> getAsistencias() {
         return asistencia.listaAsistencia;
     }
 
     /**
-     * Agrega una nota que se tomo en la reunion a la lista de notas escritas.
-     * 
-     * @param contenido contiene la informacion que se escribio.
+     * Obtiene la fecha en que se realiza la reunion.
+     *
+     * @return el dia en que se realiza.
      */
-
-    public void agregarNota(String contenido) {
-        Nota nota = new Nota(contenido);
-        listaNotas.add(nota);
+    public Date getFecha() {
+        return fecha;
     }
 
     /**
-     * Metodo que consigue la lista de notas de la reunion.
-     * 
-     * @return la lista de notas de la reunion.
+     * Obtiene la hora en la que la reunion deberia comenzar.
+     *
+     * @return la hora prevista.
      */
-    public ArrayList<Nota> obtenerNotas() {
-        return listaNotas;
+    public Instant getHoraPrevista() {
+        return horaPrevista;
     }
 
     /**
@@ -193,7 +173,7 @@ abstract class Reunion {
      * 
      * @return la lista de empleados que quedaron ausentes, segun su identificacion.
      */
-    public ArrayList<Integer> obtenerAusencias() {
+    public ArrayList<Integer> getAusencias() {
         return listaAusencias;
     }
 
@@ -204,7 +184,7 @@ abstract class Reunion {
      * @return la lista de empleados que llegaron tarde a la reunion, segun su
      *         identificacion.
      */
-    public ArrayList<Integer> obtenerRetrasos() {
+    public ArrayList<Integer> getRetrasos() {
         return asistencia.listaAtrasos;
     }
 
@@ -213,7 +193,7 @@ abstract class Reunion {
      * 
      * @return el numero de empleados que asistieron.
      */
-    public int obtenerTotalAsistencia() {
+    public int getTotalAsistencia() {
         return asistencia.listaAsistencia.size();
     }
 
@@ -225,7 +205,7 @@ abstract class Reunion {
      * 
      * @return ratio de empleados que llegaron a la reunion.
      */
-    public float obtenerPorcentajeAsistencia() {
+    public float getPorcentajeAsistencia() {
         return (float) ((float)asistencia.listaAsistencia.size() / (float)listaInvitados.size());
     }
 
@@ -240,6 +220,26 @@ abstract class Reunion {
     }
 
     /**
+     * Agrega una nota que se tomo en la reunion a la lista de notas escritas.
+     * 
+     * @param contenido contiene la informacion que se escribio.
+     */
+
+     public void agregarNota(String contenido) {
+        Nota nota = new Nota(contenido);
+        listaNotas.add(nota);
+    }
+
+    /**
+     * Metodo que consigue la lista de notas de la reunion.
+     * 
+     * @return la lista de notas de la reunion.
+     */
+    public ArrayList<Nota> getNotas() {
+        return listaNotas;
+    }
+
+    /**
      * Metodo que inicia la reunion, quiere decir, le asigna un valor al tiempo de
      * inicio real.
      * 
@@ -250,13 +250,6 @@ abstract class Reunion {
         
     }
 
-    public Instant getHoraInicio(){
-        return horaInicio;
-    }
-
-    public Instant getHoraFin(){
-        return horaFin;
-    }
     /**
      * Metodo que finaliza la reunion realizada.
      * Una vez finalizada se calcula el tiempo que duro con la hora de finalizacion.
@@ -268,6 +261,26 @@ abstract class Reunion {
         horaFin = Instant.now();
         duracionReal = Duration.between(horaInicio, horaFin);
         simularLlegada(listaInvitados);
+    }
+
+        /**
+     * Obtiene la hora en la que la reunion efectivamente inicio, solo se 
+     * puede obtener luego de iniciarla.
+     * 
+     * @return la hora del inicio de la reunion.
+     */
+    public Instant getHoraInicio(){
+        return horaInicio;
+    }
+
+    /**
+     * Obtiene la hora en la que la reunion efectivamente termino, solo se
+     * puede obtener luego de finalizarla.
+     * 
+     * @return la hora del fin de la reunion.
+     */
+    public Instant getHoraFin(){
+        return horaFin;
     }
 
     /**
