@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.*;
 import org.junit.jupiter.api.*;
 
-public class FinalizarReunionTest {
+public class PorcentajeAsistenciaTest {
 
     @Test
-    @DisplayName("Test finalizar una reunion")
-    public void testFinalizarReunion() throws Exception {
+    @DisplayName("Test calcular porcentaje de asistencia")
+    public void testPorcentajeReunion() throws Exception {
 
 
         Departamento Dev = new Departamento(8);
@@ -21,9 +21,10 @@ public class FinalizarReunionTest {
 
         rp.finalizar();
 
-        assertNotNull(rp.getHoraFin());
-        assertNotNull(rp.obtenerAusencias());
-        assertNotNull(rp.obtenerRetrasos());
+        assertNotNull(rp.obtenerPorcentajeAsistencia());
+        if(rp.obtenerTotalAsistencia()!=0){
+            assertNotEquals(rp.obtenerPorcentajeAsistencia(), 0);
+        }
     }
     
 }

@@ -42,6 +42,8 @@ public class Departamento implements Invitable {
      * 
      */
     public Departamento(int cantidad) {
+        
+
         lista = new ArrayList<Empleado>();
 
         for (int i = 0; i < cantidad; i++) {

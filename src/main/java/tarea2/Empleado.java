@@ -37,6 +37,8 @@ public class Empleado implements Invitable {
     private String departamento;
     private Invitacion invitacion;
 
+    
+
     /**
      * El metodo constructor de empleado no contiene propiedades ya que estas se
      * tratan de forma externa.

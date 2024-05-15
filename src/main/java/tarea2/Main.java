@@ -12,7 +12,7 @@ import java.time.*;
 
 public class Main {
     public static void main(String[] args) {
-
+        
         /**
          * Strings para colorear las pruebas realizadas.
          */
@@ -78,5 +78,8 @@ public class Main {
                     + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getNombre() + " "
                     + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getApellido());
         }
+
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Porcentaje de asistencia: " + rv.obtenerPorcentajeAsistencia() * 100 + "%" + ANSI_RESET + "\n");
+        
     }
 }

@@ -5,6 +5,7 @@ import java.time.*;
 import org.junit.jupiter.api.*;
 
 public class InformeTest {
+    @BeforeEach
     void setUp(){
         Departamento Qa = new Departamento(3);
         Departamento Dev = new Departamento(8);

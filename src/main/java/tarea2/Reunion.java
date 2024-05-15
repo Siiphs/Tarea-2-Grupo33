@@ -107,6 +107,7 @@ abstract class Reunion {
         this.fecha = Date.from(horaPrevista);
 
         listaInvitados = new ArrayList<Integer>();
+        listaNotas = new ArrayList<Nota>();
         asistencia = new Asistencia(horaPrevista.toEpochMilli());
     }
 
@@ -225,7 +226,7 @@ abstract class Reunion {
      * @return ratio de empleados que llegaron a la reunion.
      */
     public float obtenerPorcentajeAsistencia() {
-        return (float) (asistencia.listaAsistencia.size() / listaInvitados.size());
+        return (float) ((float)asistencia.listaAsistencia.size() / (float)listaInvitados.size());
     }
 
     /**
@@ -246,8 +247,16 @@ abstract class Reunion {
      */
     public void iniciar() {
         this.horaInicio = Instant.now();
+        
     }
 
+    public Instant getHoraInicio(){
+        return horaInicio;
+    }
+
+    public Instant getHoraFin(){
+        return horaFin;
+    }
     /**
      * Metodo que finaliza la reunion realizada.
      * Una vez finalizada se calcula el tiempo que duro con la hora de finalizacion.
