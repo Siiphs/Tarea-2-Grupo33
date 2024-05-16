@@ -1,0 +1,25 @@
+Fecha de la reunion:  Thu May 16 03:02:46 UTC 2024
+Hora prevista de la reunion:  2024-05-16T03:02:46.930128163Z
+
+Hora de inicio de la reunion:  2024-05-16T03:02:46.977116023Z
+Hora de finalizacion de la reunion:  2024-05-16T03:02:46.977537049Z
+Duracion de la reunion:  0.0 minutos
+
+Tipo de reunion:  MARKETING
+
+Enlace/Sala de la reunion:  https://meet.google.com/1420100000
+
+lista de asistentes: 
+
+1.  id: 0, Asistente: Daniel Sánchez Cárdenas
+2.  id: 1, Asistente: Valentina Carrillo Montes
+3.  id: 2, Asistente: Renata Rojas Castañón
+4.  id: 3, Asistente: Ángel Barrera Castañeda
+5.  id: 4, Asistente: María José Cordero Cano
+6.  id: 5, Asistente: Vicente Cárdenas Rodríguez
+
+notas:
+
+Nota escrita en la reunión
+otra nota
+tercera nota
