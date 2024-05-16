@@ -18,7 +18,7 @@ public class Empleado implements Invitable {
      * 
      * @param id           codigo de identificacion
      * @param nombre       nombre del empleado
-     * @param apellido     apellido paterno del empleado
+     * @param apellidos    apellidos del empleado
      * @param correo       direccion de gmail del empleado
      * @param departamento area de trabajo del empleado dentro de su empresa
      * 
@@ -32,12 +32,10 @@ public class Empleado implements Invitable {
      */
     private int id;
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private String correo;
     private String departamento;
     private Invitacion invitacion;
-
-    
 
     /**
      * El metodo constructor de empleado no contiene propiedades ya que estas se
@@ -65,12 +63,12 @@ public class Empleado implements Invitable {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellido(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getCorreo() {
@@ -107,4 +105,16 @@ public class Empleado implements Invitable {
     public Invitacion getInvitacion() {
         return invitacion;
     }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", correo='" + correo + '\'' +
+                ", departamento='" + departamento + '\'' +
+                ", invitacion=" + invitacion +
+                '}';
+    }
+
 }

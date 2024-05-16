@@ -35,7 +35,7 @@ public class Departamento implements Invitable {
 
     /**
      * El metodo constructor de Departamento recibe la cantidad de empleados que
-     * tendra asignado para luego asignar un nombre, correo y apellido aleatorios.
+     * tendra asignado para luego asignar un nombre, correo y apellidos aleatorios.
      * 
      * @param cantidad corresponde a la cantidad de empleados del departamento.
      * @param indice   asigna una id a cada empleado de forma incremental.
@@ -49,7 +49,7 @@ public class Departamento implements Invitable {
         for (int i = 0; i < cantidad; i++) {
             Empleado e = new Empleado();
             String n = ListaNombres.getNombre();
-            String a = ListaNombres.getApellido();
+            String a = ListaNombres.getApellido() + " " + ListaNombres.getApellido();
             e.setId(indice);
             e.setNombre(n);
             e.setApellido(a);
@@ -68,7 +68,7 @@ public class Departamento implements Invitable {
      * 
      * @return cantidad de empleados que trabajan en el departamento.
      */
-    public int getCantidadDeEmpleados() {
+    public int obtenerCantidadDeEmpleados() {
         return lista.size();
     }
 
@@ -87,4 +87,13 @@ public class Departamento implements Invitable {
             lista.get(i).invitar(r);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Departamento{" +
+                "nombre='" + nombre + '\'' +
+                ", lista=" + lista +
+                '}';
+    }
+
 }

@@ -29,4 +29,13 @@ class Asistencia {
     public Asistencia(long hora) {
         this.hora = hora;
     }
+
+    @Override
+    public String toString() {
+        return "Asistencia{" +
+                "listaAsistencia=" + listaAsistencia +
+                ", listaAtrasos=" + listaAtrasos +
+                '}';
+    }
+
 }

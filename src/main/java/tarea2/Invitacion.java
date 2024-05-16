@@ -57,4 +57,14 @@ public class Invitacion {
     public String getLugar() {
         return lugar;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Invitacion{" +
+                "hora=" + hora +
+                ", fecha=" + fecha +
+                ", lugar='" + lugar + '\'' +
+                '}';
+    }
+
+}   

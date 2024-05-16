@@ -26,30 +26,35 @@ public class Main {
         System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Todos los invitados \n" + ANSI_RESET);
 
         for (int i = 0; i < Departamento.listaGeneral.size(); i++) {
-            System.out.println("      Nombre: " + Departamento.listaGeneral.get(i).getNombre() + " "
-                    + Departamento.listaGeneral.get(i).getApellido() + ", correo: "
+            System.out.println("Nombre: " + Departamento.listaGeneral.get(i).getNombre() + " "
+                    + Departamento.listaGeneral.get(i).getApellidos() + ", correo: "
                     + Departamento.listaGeneral.get(i).getCorreo() + ", id: "
                     + Departamento.listaGeneral.get(i).getId());
         }
         System.out.println("\n");
 
-        Reunion rp = new ReunionPresencial(Instant.now(), Duration.ofHours(1), 3, true);
+        Reunion rp = new ReunionPresencial(Instant.now(), Duration.ofHours(1), tipoReunion.OTRO.getCualReunion(), true);
 
         Departamento.listaGeneral.get(0).invitar(rp);
 
         Invitacion invitacion = Departamento.listaGeneral.get(0).getInvitacion();
 
         System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Invitacion \n" + ANSI_RESET);
-        System.err.println("      Hora:  " + invitacion.getFecha());
-        System.err.println("      Lugar: " + invitacion.getLugar() + "\n\n");
+        System.err.println("Hora:  " + invitacion.getFecha());
+        System.err.println("Lugar: " + invitacion.getLugar() + "\n\n");
 
-        Reunion rv = new ReunionVirtual(ejemploInicio, Duration.ofHours(1), 2, false);
+        Reunion rv = new ReunionVirtual(ejemploInicio, Duration.ofHours(1), tipoReunion.MARKETING.getCualReunion(), false);
 
         Dev.invitar(rv);
 
         rv.iniciar();
 
-        System.out.println("lista de invitados a la reunion virtual: " + rv.listaInvitados.size() + "\n");
+        // Nota nota = new Nota();
+        rv.agregarNota("Nota escrita en la reunión");
+        rv.agregarNota("otra nota");
+        rv.agregarNota("tercera nota");
+
+        System.out.println(ANSI_ORANGE +"lista de invitados a la reunion virtual: " + rv.listaInvitados.size() + ANSI_RESET + "\n");
 
         rv.finalizar();
 
@@ -58,28 +63,37 @@ public class Main {
         for (int i = 0; i < rv.listaAusencias.size(); i++) {
             System.out.println((i + 1) + ".  id: " + rv.listaAusencias.get(i) + ", Ausente: "
                     + Departamento.listaGeneral.get(rv.listaAusencias.get(i)).getNombre() + " "
-                    + Departamento.listaGeneral.get(rv.listaAusencias.get(i)).getApellido());
+                    + Departamento.listaGeneral.get(rv.listaAusencias.get(i)).getApellidos());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de asistencias: " + rv.getAsistencias().size()
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de asistencias: " + rv.obtenerAsistencias().size()
                 + ANSI_RESET + "\n");
 
-        for (int i = 0; i < rv.getAsistencias().size(); i++) {
-            System.out.println((i + 1) + ".  id: " + rv.getAsistencias().get(i) + ", Asistente: "
-                    + Departamento.listaGeneral.get(rv.getAsistencias().get(i)).getNombre() + " "
-                    + Departamento.listaGeneral.get(rv.getAsistencias().get(i)).getApellido());
+        for (int i = 0; i < rv.obtenerAsistencias().size(); i++) {
+            System.out.println((i + 1) + ".  id: " + rv.obtenerAsistencias().get(i) + ", Asistente: "
+                    + Departamento.listaGeneral.get(rv.obtenerAsistencias().get(i)).getNombre() + " "
+                    + Departamento.listaGeneral.get(rv.obtenerAsistencias().get(i)).getApellidos());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de retrasos: " + rv.getRetrasos().size()
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Lista de retrasos: " + rv.obtenerRetrasos().size()
                 + ANSI_RESET + "\n");
 
-        for (int i = 0; i < rv.getRetrasos().size(); i++) {
-            System.out.println((i + 1) + ".  id: " + rv.getRetrasos().get(i) + ", Restrasado: "
-                    + Departamento.listaGeneral.get(rv.getRetrasos().get(i)).getNombre() + " "
-                    + Departamento.listaGeneral.get(rv.getRetrasos().get(i)).getApellido());
+        for (int i = 0; i < rv.obtenerRetrasos().size(); i++) {
+            System.out.println((i + 1) + ".  id: " + rv.obtenerRetrasos().get(i) + ", Restrasado: "
+                    + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getNombre() + " "
+                    + Departamento.listaGeneral.get(rv.obtenerRetrasos().get(i)).getApellidos());
         }
 
-        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Porcentaje de asistencia: " + rv.getPorcentajeAsistencia() * 100 + "%" + ANSI_RESET + "\n");
+        System.out.println(ANSI_ORANGE + "\n  \u001B[3m" + "Porcentaje de asistencia: " + rv.obtenerPorcentajeAsistencia() * 100 + "%" + ANSI_RESET + "\n");
         
-    }
+        // generar informe
+        GenerarTxt.crearInforme(invitacion, rv);
+        
+        
+        
+
+
+
+        
+        }
 }
