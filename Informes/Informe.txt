@@ -1,22 +1,22 @@
-Fecha de la reunion:  Thu May 16 03:02:46 UTC 2024
-Hora prevista de la reunion:  2024-05-16T03:02:46.930128163Z
+Fecha de la reunion:  Thu May 16 15:34:57 UTC 2024
+Hora prevista de la reunion:  2024-05-16T15:34:57.794890224Z
 
-Hora de inicio de la reunion:  2024-05-16T03:02:46.977116023Z
-Hora de finalizacion de la reunion:  2024-05-16T03:02:46.977537049Z
+Hora de inicio de la reunion:  2024-05-16T15:34:57.847500894Z
+Hora de finalizacion de la reunion:  2024-05-16T15:34:57.848001398Z
 Duracion de la reunion:  0.0 minutos
 
 Tipo de reunion:  MARKETING
 
-Enlace/Sala de la reunion:  https://meet.google.com/1420100000
+Enlace/Sala de la reunion:  https://meet.google.com/540686100000
 
 lista de asistentes: 
 
-1.  id: 0, Asistente: Daniel Sánchez Cárdenas
-2.  id: 1, Asistente: Valentina Carrillo Montes
-3.  id: 2, Asistente: Renata Rojas Castañón
-4.  id: 3, Asistente: Ángel Barrera Castañeda
-5.  id: 4, Asistente: María José Cordero Cano
-6.  id: 5, Asistente: Vicente Cárdenas Rodríguez
+1.  id: 0, Asistente: Valentina Salazar Gutiérrez
+2.  id: 1, Asistente: Carolina Salazar Rodríguez
+3.  id: 2, Asistente: Trinidad Cáceres Gutiérrez
+4.  id: 3, Asistente: Isidora Miranda González
+5.  id: 4, Asistente: Maximiliano Rodríguez Núñez
+6.  id: 5, Asistente: Agustina Cordero Salazar
 
 notas:
 

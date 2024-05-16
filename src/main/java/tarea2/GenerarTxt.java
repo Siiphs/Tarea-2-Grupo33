@@ -14,7 +14,7 @@ public class GenerarTxt {
     static String texto;
 
     /**
-     * Cada GenerarTxt tiene las siguientes caracteristicas iniciales:
+     * El constructor de la clase no necesita propiedades iniciales, por lo tanto, va vacío.
      */
     public GenerarTxt() {
     }

@@ -22,8 +22,8 @@ public class FinalizarReunionTest {
         rp.finalizar();
 
         assertNotNull(rp.getHoraFin());
-        assertNotNull(rp.getAusencias());
-        assertNotNull(rp.getRetrasos());
+        assertNotNull(rp.obtenerAusencias());
+        assertNotNull(rp.obtenerRetrasos());
     }
     
 }

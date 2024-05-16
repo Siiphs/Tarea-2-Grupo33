@@ -21,9 +21,9 @@ public class PorcentajeAsistenciaTest {
 
         rp.finalizar();
 
-        assertNotNull(rp.getPorcentajeAsistencia());
-        if(rp.getTotalAsistencia()!=0){
-            assertNotEquals(rp.getPorcentajeAsistencia(), 0);
+        assertNotNull(rp.obtenerTotalAsistencia());
+        if(rp.obtenerTotalAsistencia()!=0){
+            assertNotEquals(rp.obtenerPorcentajeAsistencia(), 0);
         }
     }
     
