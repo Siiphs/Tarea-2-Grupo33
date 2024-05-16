@@ -1,16 +1,16 @@
 import tarea2.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.io.*;
 import java.time.*;
 import org.junit.jupiter.api.*;
+
+import java.io.*;
 
 public class InformeTest {
 
     @Test
     @DisplayName("Test crear archivo")
-    public void testCrearArchivo() {
+    public void testCrearArchivo() throws Exception {
         GenerarTxt.crearArchivo();
         File archivo = new File("/workspaces/Tarea-2-Grupo33/Informes/Informe.txt");
         assertTrue(archivo.exists());
@@ -32,7 +32,7 @@ public class InformeTest {
 
     @Test
     @DisplayName("Test vaciar archivo")
-    public void testVaciarArchivo() {
+    public void testVaciarArchivo() throws Exception{
         GenerarTxt.crearArchivo();
         GenerarTxt.escribirArchivo("Contenido de prueba");
         GenerarTxt.vaciarArchivo();
@@ -43,8 +43,8 @@ public class InformeTest {
 
     @Test
     @DisplayName("Test crear informe")
-    public void testCrearInforme() {
-        ReunionVirtual rv = new ReunionVirtual(Instant.now(), Duration.ofHours(1), 2, true);
+    public void testCrearInforme() throws Exception{
+        ReunionVirtual rv = new ReunionVirtual(Instant.parse("2024-07-14T20:05:55.088Z"), Duration.ofHours(5), 3, false);
         Invitacion invitacion = new Invitacion(rv);
         rv.iniciar();
         rv.finalizar();

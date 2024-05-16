@@ -27,12 +27,23 @@ public class ReunionVirtual extends Reunion {
      * 
      * @param duracionPrevista tiempo estimado que durara la reunion.
      * 
-     * @param tipoReunion      tematica de la reunion (tecnica, de marketing u
+     * @param tipoDeReunion    tematica de la reunion (tecnica, de marketing u
      *                         otra).
      * @param esPresencial     revisa que la reunion no sea presencial.
      */
-    public ReunionVirtual(Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial) {
-        super(horaPrevista, duracionPrevista, tipoReunion, esPresencial);
+    public ReunionVirtual(Instant horaPrevista, Duration duracionPrevista, int tipoDeReunion, boolean esPresencial) throws Exception {
+        super(horaPrevista, duracionPrevista, tipoDeReunion, esPresencial);
+
+        /**
+         * Excepciones de la reunión, en caso de que tenga un tipo de reunión que no
+         * coincida con los establecidos o si tiene una duración negativa.
+         */
+        if (tipoDeReunion > tipoReunion.cantidadDeTipos || tipoDeReunion <= 0) {
+            throw new Exception("\033[0;31m" + "Tipo de reunión no identificado" + "\033[0;31m");
+        }
+        if (duracionPrevista.toMillis() <= 0) {
+            throw new Exception("\033[0;31m" + "Error en duracion de la reunion, esta tiene que ser positiva" + "\033[0;31m");
+        }
 
         /**
          * Asignacion del enlace al que los empleados ingresaran, asignando un codigo

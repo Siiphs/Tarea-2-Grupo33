@@ -5,15 +5,11 @@ import java.time.*;
 import org.junit.jupiter.api.*;
 
 public class NotaTest {
-    Departamento Qa = new Departamento(3);
-    Departamento Dev = new Departamento(8);
-    Departamento Marketing = new Departamento(5);
-    ReunionPresencial rp = new ReunionPresencial(Instant.parse("2024-05-13T23:05:55.088Z"), Duration.ofHours(1), 3, true);
-    ReunionVirtual rv = new ReunionVirtual(Instant.parse("2024-06-10T21:05:55.088Z"), Duration.ofHours(2), 1, false);
-
     @Test
     @DisplayName("Test crear una nota")
     public void testCrearUnaNota() throws Exception {
+        Departamento Dev = new Departamento(8);
+        ReunionPresencial rp = new ReunionPresencial(Instant.parse("2024-05-13T23:05:55.088Z"), Duration.ofHours(1), 3, true);
 
 
         Dev.invitar(rp);
@@ -30,13 +26,15 @@ public class NotaTest {
     @Test
     @DisplayName("Test crear nota vacía")
     public void testCrearNotaVacia() throws Exception {
+        Departamento Qa = new Departamento(3);
+        ReunionVirtual rv = new ReunionVirtual(Instant.parse("2024-06-10T21:05:55.088Z"), Duration.ofHours(2), 1, false);
 
         Qa.invitar(rv);
         rv.iniciar();
 
         rv.agregarNota("");
 
-        assertNotNull(rp.obtenerNotas());
+        assertNotNull(rv.obtenerNotas());
         assertEquals("", rv.obtenerNotas().get(0).getContenido());
     }
 }

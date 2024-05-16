@@ -14,4 +14,11 @@ public class CrearDepartamentoTest {
         assertNotNull(Qa);
     }
 
+    @Test
+    @DisplayName("Test Departamento con cantidad incorrecta de empleados")
+    public void testDepartamentoIncorrecto() throws Exception {
+        Exception e = assertThrows(Exception.class,()->{Departamento Dev = new Departamento(-5);});
+    }
+    
+
 }

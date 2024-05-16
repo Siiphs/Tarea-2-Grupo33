@@ -37,7 +37,7 @@ abstract class Reunion {
      *                         esta
      * 
      */
-    private int tipoReunion;
+    private int tipoDeReunion;
     private Date fecha;
     private Instant horaPrevista;
     private Duration duracionPrevista, duracionReal;
@@ -90,7 +90,7 @@ abstract class Reunion {
      * 
      * @param duracionPrevista el tiempo estimado que deberia durar la reunion, con
      *                         esto tambien se obtiene su hora de termino estimada
-     * @param tipoReunion      tematica de la reunion, esta puede ser tecnica, de
+     * @param tipoDeReunion      tematica de la reunion, esta puede ser tecnica, de
      *                         marketing u otro tipo. Estos tipos son extraidos de
      *                         un enum con todas las tematicas que puede tener.
      * 
@@ -103,15 +103,18 @@ abstract class Reunion {
      * 
      * @see tipoReunion
      */
-    public Reunion(Instant horaPrevista, Duration duracionPrevista, int tipoReunion, boolean esPresencial) {
-        this.tipoReunion = tipoReunion;
+    public Reunion(Instant horaPrevista, Duration duracionPrevista, int tipoDeReunion, boolean esPresencial){
+        this.tipoDeReunion = tipoDeReunion;
         this.horaPrevista = horaPrevista;
         this.duracionPrevista = duracionPrevista;
         this.fecha = Date.from(horaPrevista);
 
+
         listaInvitados = new ArrayList<Integer>();
         listaNotas = new ArrayList<Nota>();
         asistencia = new Asistencia(horaPrevista.toEpochMilli());
+            
+        
     }
 
     /**
@@ -253,7 +256,7 @@ abstract class Reunion {
     }
 
     public int getTipoReunion() {
-        return tipoReunion;
+        return tipoDeReunion;
     }
 
     public Instant getHoraInicio() {
@@ -292,7 +295,7 @@ abstract class Reunion {
     @Override
     public String toString() {
         return "Reunion{" +
-                "tipoReunion=" + tipoReunion +
+                "tipoReunion=" + tipoDeReunion +
                 ", fecha=" + fecha +
                 ", horaPrevista=" + horaPrevista +
                 ", duracionPrevista=" + duracionPrevista +

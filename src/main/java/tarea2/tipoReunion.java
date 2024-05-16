@@ -15,6 +15,15 @@ public enum tipoReunion {
     MARKETING(2),
     OTRO(3);
 
+    /**
+     * @param cantidadDeTipos numero fijo que nos indica la cantidad de opciones que
+     *                        puede tener una reunion, esta se ocupa para manejar
+     *                        excepciones a la hora de realizar una reunion.
+     * 
+     * @see Reunion
+     */
+    final static int cantidadDeTipos = 3;
+
     private int cualReunion;
 
     /**

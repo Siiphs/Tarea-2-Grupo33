@@ -41,9 +41,11 @@ public class Departamento implements Invitable {
      * @param indice   asigna una id a cada empleado de forma incremental.
      * 
      */
-    public Departamento(int cantidad) {
+    public Departamento(int cantidad) throws Exception{
+        if(cantidad<=0){
+            throw new Exception("\033[0;31m" + "Error en la cantidad de empleados del Departamento" + "\033[0;31m");
+        }
         
-
         lista = new ArrayList<Empleado>();
 
         for (int i = 0; i < cantidad; i++) {
@@ -60,6 +62,9 @@ public class Departamento implements Invitable {
             indice++;
             listaGeneral.add(e);
         }
+        
+
+        
     }
 
     /**
